@@ -902,13 +902,13 @@ int main(int argc, char **argv) {
 
 	/* Device file name */
 	if (devname == 0) {
-		devname = "/dev/twofingtouch";
+		devname = "/dev/input/by-id/usb-ILITEK_ILITEK-TP_V06.00.00.00-event-if00";
 	}
 
 	/* Try to read from device file */
 	int fileDesc;
 	if ((fileDesc = open(devname, O_RDONLY)) < 0) {
-		perror("/dev/twofingtouch");
+		perror("/dev/input/by-id/usb-ILITEK_ILITEK-TP_V06.00.00.00-event-if00");
 		return 1;
 	}
 
@@ -1031,6 +1031,7 @@ int main(int argc, char **argv) {
 
 		if(debugMode) printf("XInput device id is %i.\n", deviceID);
 		if(debugMode) printf("XInput device id for calibration is %i.\n", calibrateDeviceID);
+		if(debugMode) printf("Pray that this works, son. Pray that this works.\n");
 
 		/* Prepare by reading calibration */
 		readCalibrationData(1);

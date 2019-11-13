@@ -1,3 +1,9 @@
+twofing (0.7.2) UNRELEASED; urgency=low
+
+  * Add Raspad UDEV rules
+
+ -- Annabelle Magany <anna@gadgerat.com>  Tue, 19 Nov 2019 19:21:00 +1500
+
 twofing (0.7.1) UNRELEASED; urgency=low
 
   * Add Raspberry Pi 7" Touchscreen UDEV rules

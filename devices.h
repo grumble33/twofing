@@ -25,8 +25,8 @@ struct DeviceMapping
 
 struct DeviceMapping mapDeviceNameForCalibration[] =
 {
-	{ "ILITEK ILITEK-TP", "eGalaxTouch Virtual Device for Multi", "eGalaxTouch Virtual Device for Single" },
-	{ NULL, NULL, NULL }
+	{ "ILITEK ILITEK-TP", "ILITEK ILITEK-TP Mouse" },
+	{ NULL, NULL }
 };
 
 #endif
