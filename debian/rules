@@ -5,7 +5,7 @@
 override_dh_install:
 	cp debian/twofing.xsession debian/twofing/etc/X11/Xsession.d/90twofing
 	cp debian/twofing.xreset debian/twofing/etc/X11/Xreset.d/90twofing
-	cp debian/twofing.service debian/etc/systemd/system/twofing.service
+	cp debian/twofing.service debian/twofing/etc/systemd/system/twofing.service
 	dh_install
 
  override_dh_installinit:
