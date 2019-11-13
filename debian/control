@@ -11,5 +11,5 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, xserver-xorg-input-evdev
 Description: Process mouse events into gestures.
  twofing is a daemon that is intended to generate gestures from mouse events
- It has been tested with eGalax touch controllers.
+ Udev modified to work with the raspad..
 
