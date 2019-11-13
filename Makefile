@@ -14,6 +14,7 @@ twofing: $(OBJECTS)
 install:
 	mkdir -p $(BINDIR)
 	mkdir -p $(DESTDIR)/etc/udev/rules.d/
+	mkdir -p $(DESTDIR)/etc/systemd/system/
 	install --mode=755 $(NAME) $(BINDIR)/
 	for f in *.rules; do cp $$f $(DESTDIR)/etc/udev/rules.d/; done
 
