@@ -7,11 +7,11 @@ Type=forking
 User=pi
 Group=pi
 Environment=DISPLAY=:0
+PIDFile=/var/run/twofing.pid
+ExecStartPre=/usr/bin/rm -f /var/run/twofing.pid
 ExecStart=/usr/bin/twofing
 StandardOutput=null
 StandardError=journal
-RestartSec=5
-Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
