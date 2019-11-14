@@ -8,7 +8,7 @@ User=pi
 Group=pi
 Environment=DISPLAY=:0
 PIDFile=/var/run/twofing.pid
-ExecStartPre=/usr/bin/rm -f /var/run/twofing.pid
+ExecStartPre=/bin/rm -f /var/run/twofing.pid
 ExecStart=/usr/bin/twofing
 ExecReload=/bin/kill -s HUP $MAINPID
 KillSignal=SIGQUIT
