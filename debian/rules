@@ -8,5 +8,5 @@ override_dh_install:
 	cp debian/twofing.service debian/twofing/etc/systemd/system/twofing.service
 	dh_install
 
- override_dh_installinit:
+override_dh_installinit:
 	dh_installinit --update-rcd-params='start . 5 . stop . 1 .'
