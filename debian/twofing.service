@@ -3,13 +3,14 @@ Description=Twofing Rightclick service
 After=lightdm.service
 
 [Service]
+Type=forking
 User=pi
 Group=pi
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/twofing
 StandardOutput=null
 StandardError=journal
-RestartSec=1
+RestartSec=5
 Restart=on-failure
 
 [Install]
