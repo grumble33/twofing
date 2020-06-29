@@ -13,7 +13,7 @@ There are a few other small changes, including a fix for reading input from devi
 
 ## Building
 
-Use the package manager to install Twofing. Either use the .deb release, or compile from the source here.
+Use the package manager to install Twofing. Either use the .deb release (just download twofing_0.7.4a_armhf.deb and proceed to ##Installing, or compile from the source here.
 
 To do that, you need to follow a few steps first. Install a few prerequisites so that twofing can both be built and function:
 
