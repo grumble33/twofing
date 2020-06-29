@@ -1,2 +1,2 @@
 SUBSYSTEMS=="usb",ACTION=="add",KERNEL=="event*",ATTRS{idVendor}=="222a",ATTRS{idProduct}=="0001",SYMLINK+="twofingtouch",MODE="0444"
-KERNEL=="event*",ATTRS{name}=="ILITEK ILITEK-TP",SYMLINK+="twofingtouch",MODE="0444"
+KERNEL=="event*",ATTRS{name}=="HID 222a:0001",SYMLINK+="twofingtouch",MODE="0444"
