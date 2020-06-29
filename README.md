@@ -2,10 +2,10 @@
 
 Twofing is originally a package by [Plippo](https://github.com/Plippo) that monitors for a two-finger touch on the desktop. Once that is detected, a right-click is emulated. [Sjlongland](https://github.com/sjlongland) did a ton of work to get this debian package work in place.
 
-This fork is written to add compatibility with the RasPad and its ILITEK touchscreen. By installing this, several things will happen:
+This fork is written to add compatibility with the SunFounder 10.1" touchscreen (HID 222a:0001). By installing this, several things will happen:
 
 - new udev rules will be added for this display
-- new xorg InputClass created for the RasPad display with some default values for calibration. (see calibration below)
+- new xorg InputClass created for the SunFounder 10.1" touchscreen with some default values for calibration. (see calibration below)
 - the twofing program will be placed into /usr/bin
 - twofing is set up to be managed by systemd
 
@@ -28,14 +28,18 @@ libxrandr-dev libxtst-dev xserver-xorg-input-evdev \
 libinput-tools dh-systemd debhelper xinput-calibrator
 
 ```
-Once the dependencies and other things are installed, you can build the package with dpkg-buildpackage. Enter the source directory and use:
+Once the dependencies and other things are installed, you can build the package with dpkg-buildpackage. Download, untar and enter the source directory and use:
 
 ```bash
+wget https://github.com/grumble33/twofing/archive/v0.7.4a.tar.gz
+tar -xvzf v0.7.4a.tar.gz
+cd twofing-v0.7.4a
 dpkg-buildpackage -us -uc -b -tc
 ```
 This will churn for a bit. a lot of output will be displayed as the program is being built. If all ends well, you should see something like this:
 
 ```
+cd ..
 dpkg-buildpackage: info: binary-only upload (no source included)
 ```
 Check your user's home directory for the completed .deb package.
@@ -45,17 +49,17 @@ Check your user's home directory for the completed .deb package.
 Installation is pretty straightforward and with little fanfare.
 
 ```bash
-dpkg -i twofing_0.7.4_armhf.deb
+dpkg -i twofing_0.7.4a_armhf.deb
 ```
 Once again, there will be some output here. Systemd should announce that it is linking the service for startup.
 
 ```bash
-pi@raspberrypi:/home/pi $ sudo dpkg -i /home/pi/twofing_0.7.2_armhf.deb
+pi@raspberrypi:/home/pi $ sudo dpkg -i /home/pi/twofing_0.7.4a_armhf.deb
 Selecting previously unselected package twofing.
 (Reading database ... 161748 files and directories currently installed.)
-Preparing to unpack .../pi/twofing_0.7.2_armhf.deb ...
-Unpacking twofing (0.7.2) ...
-Setting up twofing (0.7.2) ...
+Preparing to unpack .../pi/twofing_0.7.4a_armhf.deb ...
+Unpacking twofing (0.7.4a) ...
+Setting up twofing (0.7.4a) ...
 Created symlink /etc/systemd/system/multi-user.target.wants/twofing.service → /etc/systemd/system/twofing.service.
 ```
 
@@ -91,7 +95,7 @@ This service should be able to start automatically at boot, giving your RasPad a
 Section "InputClass"
         Identifier      "calibration"
         Driver "evdev"
-        MatchProduct    "ILITEK ILITEK-TP Mouse"
+        MatchProduct    "HID 222a:0001"
         MatchDevicePath "/dev/input/event*"
         Option  "MinX"  "-188"
         Option  "MaxX"  "66235"
@@ -104,10 +108,7 @@ EndSection
 
 
 ```
-5. Reboot your Raspad.
-
-## Contact
-Feel free to contact me. I am active on Twitter ([@akh13](https://www.twitter.com/akh13)).
+5. Reboot your Raspberry Pi
 
 ## Contributing
 Pull requests are welcome. This is a very rough work-in-progress.
