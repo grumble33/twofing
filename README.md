@@ -45,7 +45,7 @@ Check your user's home directory for the completed .deb package.
 Installation is pretty straightforward and with little fanfare.
 
 ```bash
-dpkg -i twofing_0.7.2_armhf.deb
+dpkg -i twofing_0.7.4_armhf.deb
 ```
 Once again, there will be some output here. Systemd should announce that it is linking the service for startup.
 
