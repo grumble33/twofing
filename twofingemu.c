@@ -902,13 +902,13 @@ int main(int argc, char **argv) {
 
 	/* Device file name */
 	if (devname == 0) {
-		devname = "/dev/input/by-id/usb-ILITEK_ILITEK-TP_V06.00.00.00-event-if00";
+		devname = "/dev/input/by-id/usb-222a_0001-event-if00";
 	}
 
 	/* Try to read from device file */
 	int fileDesc;
 	if ((fileDesc = open(devname, O_RDONLY)) < 0) {
-		perror("/dev/input/by-id/usb-ILITEK_ILITEK-TP_V06.00.00.00-event-if00");
+		perror("/dev/input/by-id/usb-222a_0001-event-if00");
 		return 1;
 	}
 
