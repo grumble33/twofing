@@ -1,4 +1,4 @@
-# Twofing Redux for RasPad
+# Twofing Changes for SunFounder 10.1" Touchscreen
 
 Twofing is originally a package by [Plippo](https://github.com/Plippo) that monitors for a two-finger touch on the desktop. Once that is detected, a right-click is emulated. [Sjlongland](https://github.com/sjlongland) did a ton of work to get this debian package work in place.
 
