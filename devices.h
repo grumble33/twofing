@@ -25,7 +25,7 @@ struct DeviceMapping
 
 struct DeviceMapping mapDeviceNameForCalibration[] =
 {
-	{ "ILITEK ILITEK-TP", "ILITEK ILITEK-TP Mouse" },
+	{ "HID 222a:0001", "HID 222a:0001" },
 	{ NULL, NULL }
 };
 
